@@ -349,11 +349,11 @@ public class WiFi extends Aware_Sensor {
                     if (wifi == null) return;
 
                     WifiInfoFetch wifiInfo = new WifiInfoFetch(getApplicationContext(), wifi);
-                    WifiApResults scanResults = new WifiApResults(getApplicationContext(), wifiManager.getScanResults());
+                    //WifiApResults scanResults = new WifiApResults(getApplicationContext(), wifiManager.getScanResults());
 
                     ExecutorService executor = Executors.newSingleThreadExecutor();
                     executor.submit(wifiInfo);
-                    executor.submit(scanResults);
+                    //executor.submit(scanResults);
                     executor.shutdown();
 
                     if (awareSensor != null) awareSensor.onWiFiScanEnded();
