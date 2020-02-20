@@ -1,6 +1,6 @@
-[submodule "com.aware.plugin.google.activity_recognition"]
-	path = com.aware.plugin.google.activity_recognition
-	url = https://github.com/denzilferreira/com.aware.plugin.google.activity_recognition
 [submodule "com.aware.plugin.superstudy"]
 	path = com.aware.plugin.superstudy
 	url = https://github.com/UChicagoSUPERgroup/com.aware.plugin.superstudy.git
+[submodule "com.aware.plugin.google.activity_recognition"]
+	path = com.aware.plugin.google.activity_recognition
+	url = https://github.com/denzilferreira/com.aware.plugin.google.activity_recognition.git
