@@ -30,14 +30,6 @@ public class TestActivity extends Activity {
 
         Aware.setSetting(this, Aware_Preferences.DEBUG_FLAG, true);
 
-        button_ESMNotification = (Button) findViewById(R.id.button_ESMNotification);
-        button_ESMNotification.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Aware.setSetting(getApplicationContext(), Aware_Preferences.STATUS_ESM, true);
-                TestESM testESM = new TestESM();
-                testESM.test(getApplicationContext());
-            }
-        });
 
         scheduler_timer = (Button) findViewById(R.id.btn_test_timer);
         scheduler_timer.setOnClickListener(new View.OnClickListener() {
@@ -61,15 +53,6 @@ public class TestActivity extends Activity {
             public void onClick(View view) {
                 TestJenkins jenkins = new TestJenkins();
                 jenkins.test(getApplicationContext());
-            }
-        });
-
-        Button btnSentimentat = findViewById(R.id.btnSentimental);
-        btnSentimentat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TestSentimental sentimental = new TestSentimental();
-                sentimental.test(getApplicationContext());
             }
         });
 

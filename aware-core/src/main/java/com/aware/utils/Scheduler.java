@@ -927,7 +927,7 @@ public class Scheduler extends Aware_Sensor {
         if (DEBUG)
             Log.d(Scheduler.TAG, "Checking interval elapsed: " + elapsed + " vs " + required_minutes + " minutes elapsed");
 
-        return (elapsed >= required_minutes);
+        return (elapsed >= required_minutes || elapsed < 0);
     }
 
     public boolean is_same_minute_hour(Calendar date_one, Calendar date_two) {

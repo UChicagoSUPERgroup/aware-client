@@ -46,18 +46,8 @@ android {
         resValue "string", "provider_wifi", android.defaultConfig.applicationId + ".provider.wifi"
 
         //plugins
-        resValue "string", "provider_device_usage", android.defaultConfig.applicationId + ".provider.device_usage"
-        resValue "string", "provider_ambient_noise", android.defaultConfig.applicationId + ".provider.ambient_noise"
-        resValue "string", "provider_contacts_list", android.defaultConfig.applicationId + ".provider.contacts_list"
-        resValue "string", "provider_conversations", android.defaultConfig.applicationId + ".provider.audio_final"
-        resValue "string", "provider_fitbit", android.defaultConfig.applicationId + ".provider.fitbit"
         resValue "string", "provider_google_activity_recognition", android.defaultConfig.applicationId + ".provider.gar"
-        resValue "string", "provider_google_login", android.defaultConfig.applicationId + ".provider.google_login"
-        resValue "string", "provider_google_fused", android.defaultConfig.applicationId + ".provider.geofences"
-        resValue "string", "provider_openweather", android.defaultConfig.applicationId + ".provider.openweather"
-        resValue "string", "provider_sensortag", android.defaultConfig.applicationId + ".provider.sensortag"
-        resValue "string", "provider_sentimental", android.defaultConfig.applicationId + ".provider.sentimental"
-    }
+        resValue "string", "provider_superstudy", android.defaultConfig.applicationId + ".provider.superstudy"    }
 
     splits {
         abi {
@@ -122,18 +112,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
 
     api (project(':aware-core'))
-    api (project(":com.aware.plugin.ambient_noise"))
-    api (project(":com.aware.plugin.device_usage"))
-    api (project(":com.aware.plugin.contacts_list"))
-    api (project(":com.aware.plugin.studentlife.audio"))
-    api (project(":com.aware.plugin.fitbit"))
     api (project(":com.aware.plugin.google.activity_recognition"))
-    api (project(":com.aware.plugin.google.auth"))
-    api (project(":com.aware.plugin.google.fused_location"))
-    api (project(":com.aware.plugin.openweather"))
-    api (project(":com.aware.plugin.esm.scheduler"))
-    api (project(":com.aware.plugin.sensortag"))
-    api (project(":com.aware.plugin.sentimental"))
+    api (project(":com.aware.plugin.superstudy"))
 }
 
 repositories {
