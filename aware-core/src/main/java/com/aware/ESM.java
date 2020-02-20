@@ -204,7 +204,10 @@ public class ESM extends Aware_Sensor {
      * ESM that asks the user to make a video recording
      */
     public static final int TYPE_ESM_VIDEO = 16;
-
+    /**
+     * ESM Dialog with checkbox ranges
+     */
+    public static final int TYPE_ESM_RANGE = 17;
     /**
      * Required String extra for displaying an ESM. It should contain the JSON string that defines the ESM dialog.
      * Examples:<p>
