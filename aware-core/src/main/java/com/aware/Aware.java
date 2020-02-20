@@ -308,11 +308,13 @@ public class Aware extends Service {
      */
     public static Account getAWAREAccount(Context context) {
         AccountManager accountManager = (AccountManager) context.getSystemService(ACCOUNT_SERVICE);
+        /*
         Account[] accounts = accountManager.getAccountsByType(Aware_Accounts.Aware_Account.AWARE_ACCOUNT_TYPE);
         if (accounts.length > 0) {
             aware_account = accounts[0];
             return aware_account;
         }
+        */
         if (aware_account == null) {
             aware_account = new Account(Aware_Accounts.Aware_Account.AWARE_ACCOUNT, Aware_Accounts.Aware_Account.AWARE_ACCOUNT_TYPE);
             try {

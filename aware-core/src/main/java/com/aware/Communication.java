@@ -373,12 +373,12 @@ public class Communication extends Aware_Sensor {
         telephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
 
         callsObs = new CallsObserver(new Handler());
-        msgsObs = new MessagesObserver(new Handler());
+        //msgsObs = new MessagesObserver(new Handler());
 
         //REQUIRED_PERMISSIONS.add(Manifest.permission.READ_CONTACTS);
         REQUIRED_PERMISSIONS.add(Manifest.permission.READ_PHONE_STATE);
         REQUIRED_PERMISSIONS.add(Manifest.permission.READ_CALL_LOG);
-        REQUIRED_PERMISSIONS.add(Manifest.permission.READ_SMS);
+        //REQUIRED_PERMISSIONS.add(Manifest.permission.READ_SMS);
 
         if (Aware.DEBUG) Log.d(TAG, "Communication service created!");
     }
@@ -396,11 +396,13 @@ public class Communication extends Aware_Sensor {
                 getContentResolver().unregisterContentObserver(callsObs);
             }
 
+            /*
             if (Aware.getSetting(getApplicationContext(), Aware_Preferences.STATUS_MESSAGES).equals("true")) {
                 getContentResolver().registerContentObserver(MESSAGES_CONTENT_URI, true, msgsObs);
             } else {
                 getContentResolver().unregisterContentObserver(msgsObs);
             }
+            */
 
             if (Aware.DEBUG) Log.d(TAG, TAG + " service active...");
 
@@ -424,7 +426,7 @@ public class Communication extends Aware_Sensor {
         super.onDestroy();
 
         getContentResolver().unregisterContentObserver(callsObs);
-        getContentResolver().unregisterContentObserver(msgsObs);
+        //getContentResolver().unregisterContentObserver(msgsObs);
         telephonyManager.listen(phoneState, PhoneStateListener.LISTEN_NONE);
 
         ContentResolver.setSyncAutomatically(Aware.getAWAREAccount(this), Communication_Provider.getAuthority(this), false);
