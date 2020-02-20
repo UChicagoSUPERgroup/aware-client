@@ -6,6 +6,7 @@ import android.content.ClipData;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import android.util.Log;
@@ -59,8 +60,6 @@ public class ESM_Range extends ESM_Question {
         start.setTimeInMillis(0);
         end.setTimeInMillis(3600000 * 24);
         dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-        Log.d("esm_Range", Long.toString(start.getTimeInMillis()));
-        Log.d("esm_Range", Long.toString(end.getTimeInMillis()));
     }
 
     public void resetCheckboxes() throws JSONException {
@@ -170,7 +169,7 @@ public class ESM_Range extends ESM_Question {
                     @Override
                     public boolean onLongClick(View view) {
                         ClipData clipData = ClipData.newPlainText(null, checked.getText());
-                        View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder();
+                        View.DragShadowBuilder shadowBuilder = new EmptyDragShadowBuilder();
 
                         view.startDragAndDrop(clipData, shadowBuilder, null, 0);
                         return false;
@@ -235,5 +234,14 @@ public class ESM_Range extends ESM_Question {
 
         return esm_dialog;
     }
+    public class EmptyDragShadowBuilder extends View.DragShadowBuilder {
+
+        @Override
+        public void onProvideShadowMetrics(Point outShadowSize, Point outShadowTouchPoint) {
+            outShadowSize.set(1,1);
+            outShadowTouchPoint.set(0,0);
+        }
+    }
+
 
 }
