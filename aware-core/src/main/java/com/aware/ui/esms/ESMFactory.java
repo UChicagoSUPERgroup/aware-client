@@ -68,6 +68,8 @@ public class ESMFactory {
                 return new ESM_Date().rebuild(esm).setID(_id);
             case ESM.TYPE_ESM_RANGE:
                 return new ESM_Range().rebuild(esm).setID(_id);
+            case ESM.TYPE_ESM_GRID:
+                return new ESM_Grid().rebuild(esm).setID(_id);
             default:
                 return null;
         }
