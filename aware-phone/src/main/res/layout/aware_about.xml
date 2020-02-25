@@ -3,18 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
-        android:id="@+id/about_main"
+    <TextView
+        android:id="@+id/disclosure"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:padding="0dp">
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center"
+        android:padding="10pt"
+        android:text="@string/disclosure"/>
 
-        <WebView
-            android:id="@+id/about_us"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent" />
-    </ScrollView>
+    <TextView
+        android:id="@+id/about_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/disclosure"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center"
+        android:padding="10pt"
+        android:text="@string/about_team"/>
+
+    <TextView
+        android:id="@+id/about_super"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_team"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:gravity="center"
+        android:padding="10pt"
+        android:text="@string/about_super"/>
 
     <include
         android:id="@+id/aware_bottombar"

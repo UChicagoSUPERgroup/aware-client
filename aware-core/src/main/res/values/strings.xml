@@ -35,6 +35,9 @@
     <string name="esm_range_instructions">Touch and drag to select.</string>
     <string name="cancel">Quit Survey</string>
     <string name="next">Continue</string>
+    <string name="about_team"><a href="http://www.awareframework.com/team/">Learn more about the original AWARE framework and its development</a></string>
+    <string name="disclosure">This version of the AWARE app has been modified by the SUPERgroup at the University of Chicago to better work with our research goals.</string>
+    <string name="about_super"><a href="http://super.cs.uchicago.edu">Learn more about the SUPERgroup</a></string>
 
 
     <string name="sensor_accelerometer">Accelerometer</string>
