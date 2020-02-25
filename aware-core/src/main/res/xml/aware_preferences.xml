@@ -898,7 +898,7 @@
                 android:title="Clean-up old data?" />
 
             <CheckBoxPreference
-                android:defaultValue="false"
+                android:defaultValue="true"
                 android:key="webservice_silent"
                 android:persistent="true"
                 android:summary="Disable data sync notifications"
