@@ -33,6 +33,9 @@
     <string name="foreground_notification_text">Data collection active</string>
     <string name="foreground_notification_sync_text">Sync</string>
     <string name="esm_range_instructions">Touch and drag to select.</string>
+    <string name="cancel">Quit Survey</string>
+    <string name="next">Continue</string>
+
 
     <string name="sensor_accelerometer">Accelerometer</string>
     <string name="sensor_applications">Applications</string>
