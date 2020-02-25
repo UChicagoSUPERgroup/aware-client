@@ -112,6 +112,13 @@ public class ESM_Range extends ESM_Question {
         return this.step;
     }
 
+    public ESM_Range addCheckbox(String option) throws JSONException {
+        JSONArray checkboxes = getCheckboxes();
+        checkboxes.put(option);
+        this.esm.put(esm_checkboxes, checkboxes);
+        return this;
+    }
+
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
