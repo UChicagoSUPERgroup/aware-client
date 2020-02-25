@@ -142,8 +142,7 @@ public class ESM_Grid extends ESM_Question {
                 gridView.addView(view);
             }
 
-            final LinearLayout grid = (LinearLayout) ui.findViewById(R.id.esm_question_grid);
-            grid.setOnClickListener(new View.OnClickListener() {
+            gridView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     try {
