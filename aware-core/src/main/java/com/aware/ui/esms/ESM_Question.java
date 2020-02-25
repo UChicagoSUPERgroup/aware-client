@@ -41,6 +41,7 @@ public class ESM_Question extends DialogFragment {
     public static final String esm_notification_retry = "esm_notification_retry";
     public static final String esm_replace_queue = "esm_replace_queue";
     public static final String esm_trigger = "esm_trigger";
+    public static final String esm_date = "esm_date";
     public static final String esm_flows = "esm_flows";
     public static final String flow_user_answer = "user_answer";
     public static final String flow_next_esm = "next_esm";
@@ -220,6 +221,13 @@ public class ESM_Question extends DialogFragment {
         return this.esm.getString(esm_trigger);
     }
 
+    public String getDate() throws JSONException {
+        if (!this.esm.has(esm_date)) {
+            this.esm.put(esm_date, "");
+        }
+        return this.esm.getString(esm_date);
+    }
+
     /**
      * A label for what triggered this ESM
      *
@@ -229,6 +237,18 @@ public class ESM_Question extends DialogFragment {
      */
     public ESM_Question setTrigger(String trigger) throws JSONException {
         this.esm.put(esm_trigger, trigger);
+        return this;
+    }
+
+    /**
+     * A date for this ESM
+     *
+     * @param date
+     * @return
+     * @throws JSONException
+     */
+    public ESM_Question setDate(String date) throws JSONException {
+        this.esm.put(esm_date, date);
         return this;
     }
 

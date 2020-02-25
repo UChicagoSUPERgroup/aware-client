@@ -399,6 +399,7 @@ public class ESM extends Aware_Sensor {
                 rowData.put(ESM_Data.NOTIFICATION_TIMEOUT, esm.optInt(ESM_Data.NOTIFICATION_TIMEOUT)); //optional, defaults to 0
                 rowData.put(ESM_Data.STATUS, ESM.STATUS_NEW);
                 rowData.put(ESM_Data.TRIGGER, isTrial ? "TRIAL" : esm.optString(ESM_Data.TRIGGER)); //we use this TRIAL trigger to remove trials from database at the end of the trial
+                rowData.put(ESM_Data.DATE, esm.optString(ESM_Data.DATE));
 
                 if (i == 0 && (rowData.getAsInteger(ESM_Data.EXPIRATION_THRESHOLD) == 0 || rowData.getAsInteger(ESM_Data.NOTIFICATION_TIMEOUT) > 0)) {
                     is_persistent = true;
@@ -678,6 +679,7 @@ public class ESM extends Aware_Sensor {
                         rowData.put(ESM_Data.NOTIFICATION_TIMEOUT, nextESM.optInt(ESM_Data.NOTIFICATION_TIMEOUT)); //optional, defaults to 0
                         rowData.put(ESM_Data.STATUS, ESM.STATUS_NEW);
                         rowData.put(ESM_Data.TRIGGER, nextESM.optString(ESM_Data.TRIGGER)); //optional, defaults to ""
+                        rowData.put(ESM_Data.DATE, nextESM.optString(ESM_Data.DATE));
 
                         context.getContentResolver().insert(ESM_Data.CONTENT_URI, rowData);
                     } else {
@@ -693,6 +695,7 @@ public class ESM extends Aware_Sensor {
                         rowData.put(ESM_Data.NOTIFICATION_TIMEOUT, nextESM.optInt(ESM_Data.NOTIFICATION_TIMEOUT)); //optional, defaults to 0
                         rowData.put(ESM_Data.STATUS, ESM.STATUS_BRANCHED);
                         rowData.put(ESM_Data.TRIGGER, nextESM.optString(ESM_Data.TRIGGER)); //optional, defaults to ""
+                        rowData.put(ESM_Data.DATE, nextESM.optString(ESM_Data.DATE));
 
                         context.getContentResolver().insert(ESM_Data.CONTENT_URI, rowData);
                     }
